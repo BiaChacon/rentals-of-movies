@@ -13,23 +13,23 @@
 
                 <h:column>
                 <f:facet name="header">Filme</f:facet>
-                #{f.titulo}
+                #{f.filme.titulo}
                 </h:column>
 
                 <h:column>
                 <f:facet name="header">Quantidade</f:facet>
-                
+                #{f.qtd}
                 </h:column>
                 
                 <h:column>
                 <f:facet name="header"></f:facet>
-                <h:commandButton action="#{cestac.removeFilme(f.filme.id)}" value="Remover" />
+                <h:commandButton action="#{cesta.removeFilme(f.filme.id)}" value="Remover" />
                 </h:column>
                 
             </h:dataTable>
             <h:commandButton action="#{tela.aluguelFilmes()}" value="Voltar"/>
             <h:commandButton value="Confirmar aluguel"/>
-            <h:commandButton action="#{cestac.limpar()}" value="Limpar cesta"/>
+            <h:commandButton action="#{cesta.limpar()}" value="Limpar cesta"/>
             
         </h:form>
     </h:body>

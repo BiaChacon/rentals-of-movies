@@ -20,5 +20,13 @@ public class ItemCesta {
     public void setQtd(int qtd) {
         this.qtd = qtd;
     }
+    
+    public void aQtd(){
+	this.qtd++;
+    }
+    
+    public void dQtd(){
+	this.qtd--;
+    }
 
 }
