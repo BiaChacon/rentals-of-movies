@@ -1,8 +1,7 @@
-package controller;
+package persistence;
 
 import java.sql.Connection;
 import javax.faces.bean.ManagedBean;
-import persistence.ConnectionDatabase;
 
 @ManagedBean (name = "t")
 public class TesteDatabase {

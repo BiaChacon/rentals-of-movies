@@ -9,68 +9,69 @@
     <h:body>
         <h1>Filmes cadastrados</h1>
         <h:form>
-            <h:dataTable value="#{filme.listaFilmes}" var="f">
+            <h:dataTable var="filme" value="#{filmes.filmes}" >
 
                 <h:column>
                 <f:facet name="header">Título</f:facet>
-                #{f.titulo}
+                #{filme.titulo}
                 </h:column>
 
                 <h:column>
                 <f:facet name="header">Data Lançamento</f:facet>
-                <h:outputText value="#{f.dataLancamento}">
+                <h:outputText value="#{filme.dataLancamento}">
                         <f:convertDateTime pattern="dd/MM/yyyy" />
                 </h:outputText>
                 </h:column>
                 
                 <h:column>
                 <f:facet name="header">Nota</f:facet>
-                #{f.nota}
+                #{filme.nota}
                 </h:column>
                 
                 <h:column>
                 <f:facet name="header">Descrição</f:facet>
-                #{f.descricao}
+                #{filme.descricao}
                 </h:column>
                 
                 <h:column>
                 <f:facet name="header">Quantidade</f:facet>
-                #{f.quantidade}
+                #{filme.quantidade}
                 </h:column>
                 
             </h:dataTable>    
         </h:form>
        
-        
         <h2>Fomulário de cadastro</h2>
+        
         <h:form>
-            <h:messages /> 
-            Título: <h:inputText id="titulo" value="#{filme.f.titulo}" required="true" requiredMessage="Título não pode ser vazio."/> 
-                    <h:message for="titulo"/>
-            <br/> 
-            Data Lançamento: <h:inputText id="dataLancamento" value="#{filme.f.dataLancamento}" converterMessage="Data fora do formato dd/MM/yyyy">
-                                <f:convertDateTime pattern="dd/MM/yyyy" /> 
+            Título: <h:inputText id="titulo" value="#{filmes.filme.titulo}" required="true" requiredMessage="Título não pode ser vazio."/> 
+                    <h:message id="m1" for="titulo" style="color:red"/> <br/>
+            <br/>
+            Data Lançamento: <h:inputText id="dataLancamento" value="#{filmes.filme.dataLancamento}" requiredMessage="Data fora do formato dd/MM/yyyy">
+                                <f:convertDateTime pattern="dd/MM/yyyy" for="dataLancamento"/> 
                              </h:inputText>
-                             <h:message for="dataLancamento"/>
+                             <h:message id="m2" for="dataLancamento" style="color:red"/> <br/>
             <br/>
-            Nota: <h:inputText id="nota" value="#{filme.f.nota}" converterMessage="A nota deve ser um inteiro de 1 até 5.">
-                
+            Nota: <h:inputText id="nota" value="#{filmes.filme.nota}" requiredMessage="A nota deve ser um inteiro de 1 até 5.">
+                     <f:validateDoubleRange maximum="5" minimum="1"/>
                   </h:inputText>
-                  <h:message for="nota"/>
+                  <h:message id="m3" for="nota" style="color:red"/> <br/>
             <br/>
-            Descrição: <h:inputText id="descricao" value="#{filme.f.descricao}" converterMessage="Descrição deve conter pelo menos 10 caracteres.">
-                
+            Descrição: <h:inputText id="descricao" value="#{filmes.filme.descricao}" requiredMessage="Descrição deve conter pelo menos 10 caracteres.">
+                          <f:validateLength minimum="10" maximum="250"/>
                        </h:inputText>
-                       <h:message for="descricao"/>
+                       <h:message id="m4" for="descricao" style="color:red"/> <br/>
             <br/>
-            Quantidade: <h:inputText id="quantidade" value="#{filme.f.quantidade}" converterMessage="Quantidade deve ser um número maior que zero.">
-                
-                       </h:inputText>
-                       <h:message for="quantidade"/>
-            <br/>
-            <h:commandButton action="#{filme.addFilme()}" value="Cadastrar"/> <br/>
+            Quantidade: <h:inputText id="quantidade" value="#{filmes.filme.quantidade}" requiredMessage="Quantidade deve ser um número maior que zero."/>
+                        <h:message id="m5" for="quantidade" style="color:red"/> <br/>
+            
+            
+                        <br/> <h:commandButton action="#{filmes.cadastraFilme()}" value="Cadastrar"/>
         </h:form>
-        <h:form><h:commandButton action="home" value="Cancelar"/></h:form>
+        
+        <br/>
+        <h:form><h:commandButton action="#{tela.home()}" value="Cancelar"/></h:form>
+        
     </h:body>
 </html>
 

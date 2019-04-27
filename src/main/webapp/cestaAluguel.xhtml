@@ -9,7 +9,7 @@
     <h:body>
         <h1>Cesta de aluguel</h1>
         <h:form>
-            <h:dataTable value="#{filme.listaFilmes}" var="f">
+            <h:dataTable value="#{cesta.listaFilmes}" var="f">
 
                 <h:column>
                 <f:facet name="header">Filme</f:facet>
@@ -23,11 +23,11 @@
                 
                 <h:column>
                 <f:facet name="header"></f:facet>
-                <h:commandButton value="Remover" />
+                <h:commandButton action="#{cesta.removeFilme(f.id)}" value="Remover" />
                 </h:column>
                 
             </h:dataTable>
-            <h:commandButton action="#{filme.aluguelFilmes()}" value="Voltar"/>
+            <h:commandButton action="#{tela.aluguelFilmes()}" value="Voltar"/>
             <h:commandButton value="Confirmar aluguel"/>
             <h:commandButton value="Limpar cesta"/>
             
