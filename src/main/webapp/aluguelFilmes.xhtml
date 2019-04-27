@@ -40,7 +40,7 @@
                 
                 <h:column>
                 <f:facet name="header">Alugar</f:facet>
-                <h:commandButton action="#{cesta.addFilme(f)}" value="Adicionar a Cesta" disabled="#{f.quantidade == 0}"/>
+                <h:commandButton action="#{cestaController.addFilme(f)}" value="Adicionar a Cesta" disabled="#{f.quantidade == 0}"/>
                 </h:column>
                 
             </h:dataTable>  

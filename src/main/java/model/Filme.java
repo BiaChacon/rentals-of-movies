@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 
-public class Filmes {
+public class Filme {
     
     private int id;
     private String titulo;
@@ -12,7 +12,7 @@ public class Filmes {
     private String descricao;
     private int quantidade;
 
-    public Filmes(int id, String titulo, Date dataLancamento, int nota, String descricao, int quantidade) {
+    public Filme(int id, String titulo, Date dataLancamento, int nota, String descricao, int quantidade) {
         this.id = id;
         this.titulo = titulo;
         this.dataLancamento = dataLancamento;
@@ -21,7 +21,7 @@ public class Filmes {
         this.quantidade = quantidade;
     }
 
-    public Filmes(String titulo, Date dataLancamento, int nota, String descricao, int quantidade) {
+    public Filme(String titulo, Date dataLancamento, int nota, String descricao, int quantidade) {
         this.titulo = titulo;
         this.dataLancamento = dataLancamento;
         this.nota = nota;
@@ -29,7 +29,7 @@ public class Filmes {
         this.quantidade = quantidade;
     }
 
-    public Filmes() {}
+    public Filme() {}
     
     public int getId() {
         return id;

@@ -1,6 +1,6 @@
 package persistence;
 
-import model.Filmes;
+import model.Filme;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class FilmesDAO {
+public class FilmeDAO {
  
     private ConnectionDatabase c = new ConnectionDatabase();
 
@@ -18,7 +18,7 @@ public class FilmesDAO {
 
     private final String LISTFILMES = "SELECT * FROM FILMES";
 
-    public void insertIntoFilmes(Filmes f) {
+    public void insertIntoFilmes(Filme f) {
         c.dbConnection();
         try {
             PreparedStatement pst = c.getConnection().prepareStatement(INSERT);
@@ -35,8 +35,8 @@ public class FilmesDAO {
         c.dbConnectionClose();
     }
 
-    public List<Filmes> readFilmes() {
-        ArrayList<Filmes> listaFilmes = new ArrayList<>();
+    public List<Filme> readFilmes() {
+        ArrayList<Filme> listaFilmes = new ArrayList<>();
         try {
             c.dbConnection();
             PreparedStatement ps;
@@ -45,7 +45,7 @@ public class FilmesDAO {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-            	Filmes f = new Filmes(
+            	Filme f = new Filme(
                         rs.getInt("id"),
                         rs.getString("titulo"),
                         rs.getDate("dataLancamento"),
