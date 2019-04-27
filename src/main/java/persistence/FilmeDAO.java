@@ -15,9 +15,24 @@ public class FilmeDAO {
     private ConnectionDatabase c = new ConnectionDatabase();
 
     private final String INSERT = "INSERT INTO FILMES(titulo, dataLancamento, nota, descricao, quantidade) VALUES (?, ?, ?, ?, ?);";
+    
+    private final String UPDATE = "UPDATE FILMES SET quantidade=? WHERE id=?;";
 
     private final String LISTFILMES = "SELECT * FROM FILMES";
-
+    
+    public void updateQtd(int qtd){
+        c.dbConnection();
+        try {
+            PreparedStatement pst = c.getConnection().prepareStatement(UPDATE);
+            pst.setInt(1, qtd);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectionDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erro" + ex);
+        }
+        c.dbConnectionClose();   
+    }
+    
     public void insertIntoFilmes(Filme f) {
         c.dbConnection();
         try {

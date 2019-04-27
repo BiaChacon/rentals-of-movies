@@ -79,4 +79,12 @@ public class Filme {
         this.quantidade = quantidade;
     }
     
+    public void incrementaQtd(){
+	this.quantidade++;
+    }
+    
+    public void diminuiQtd(){
+	this.quantidade--;
+    }
+    
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class Item {
+public class ItemCesta {
     
     private Filme filme;
     private int qtd;
