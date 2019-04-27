@@ -26,10 +26,11 @@ public class FilmesController {
         this.f = f;
     }
     
-    public void addFilme(){
+    public String addFilme(){
         FilmesDAO fd = new FilmesDAO();
         fd.insertIntoFilmes(f);
         f = new Filmes();
+        return "home";
     }
 
     public void listarFilmes() {
@@ -37,11 +38,15 @@ public class FilmesController {
         listaFilmes = fd.readFilmes();
     }
     
-    public String verCestaAluguel(){
+    public String cestaAluguel(){
         return "cestaAluguel";
     }
     
-    public String cancelar(){
+    public String cadastrarFilmes(){
+        return "cadastrarFilmes";
+    }
+    
+    public String aluguelFilmes(){
         return "aluguelFilmes";
     }
     

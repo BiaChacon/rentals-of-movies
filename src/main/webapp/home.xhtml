@@ -7,6 +7,11 @@
     </h:head>
     <h:body>
         <h:outputLabel value="#{t.teste()}"/> 
+        <h1>Rentals of movies</h1>
+        <h:form>
+            <h:commandButton action="#{filme.aluguelFilmes()}" value="Alugar Filme"/>
+            <h:commandButton action="#{filme.cadastrarFilmes()}" value="Cadastrar Filme"/>    
+        </h:form>
     </h:body>
 </html>
 
