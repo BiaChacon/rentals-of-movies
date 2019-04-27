@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionDatabase {
 
-	private String user;
+    private String user;
     private String password;
     private String url;
     private String driverjdbc;

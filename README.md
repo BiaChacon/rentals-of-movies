@@ -1,1 +1,1 @@
-# unicorns-store
+# rentals-of-movies
