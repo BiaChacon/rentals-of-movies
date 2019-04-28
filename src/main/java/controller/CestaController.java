@@ -30,30 +30,27 @@ public class CestaController {
         this.cestaFilmes = cestaFilmes;
     }
     
-    /*public Filme verificar(Filme f){
+    public Filme verificar(Filme f){
         for (ItemCesta i : cestaFilmes) {
             if(i.getFilme().getId() == f.getId()){
                 return null;
             }
-        return f; 
-    }*/
+        }
+        return f;
+    }
     
     public void addFilme(Filme f){
         
-        for (ItemCesta i : cestaFilmes) {
-            
-            if(i.getFilme().getId() == f.getId()){
-               i.aQtd();
-               f.diminuiQtd();
-               dao.updateQtd(f);
-            }else{
-               ItemCesta ic = new ItemCesta(f, 1);
-               f.diminuiQtd();
-               dao.updateQtd(f);
-               this.cestaFilmes.add(ic);
-            } 
-            
-        }
+        if(verificar(f) == null){
+            //i.aQtd();
+            f.diminuiQtd();
+            dao.updateQtd(f);
+        }else{
+            ItemCesta ic = new ItemCesta(f, 1);
+            f.diminuiQtd();
+            dao.updateQtd(f);
+            this.cestaFilmes.add(ic);
+        }  
         
     }
     
