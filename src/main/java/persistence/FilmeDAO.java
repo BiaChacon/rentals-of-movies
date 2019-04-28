@@ -20,11 +20,11 @@ public class FilmeDAO {
 
     private final String LISTFILMES = "SELECT * FROM FILMES";
     
-    public void updateQtd(int qtd){
+    public void updateQtd(Filme f){
         c.dbConnection();
         try {
             PreparedStatement pst = c.getConnection().prepareStatement(UPDATE);
-            pst.setInt(1, qtd);
+            pst.setInt(1, f.getId());
             pst.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ConnectionDatabase.class.getName()).log(Level.SEVERE, null, ex);
