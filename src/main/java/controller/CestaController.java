@@ -15,6 +15,8 @@ public class CestaController {
     private FilmeDAO dao = new FilmeDAO();
 
     public CestaController() {
+        this.cestaFilmes = new ArrayList<Filme>();
+        
     }
 
     public ArrayList<Filme> getCestaFilmes() {
@@ -26,6 +28,7 @@ public class CestaController {
     }
     
     public CestaController(ArrayList cestaFilmes) {
+        this.cestaFilmes = new ArrayList<Filme>();
         this.cestaFilmes = cestaFilmes;
     }
    
