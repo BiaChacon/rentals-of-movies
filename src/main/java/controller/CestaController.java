@@ -14,6 +14,7 @@ public class CestaController {
   
     private ArrayList<ItemCesta> cestaFilmes;
     private FilmeDAO dao = new FilmeDAO();
+    private ItemCesta item;
 
     public CestaController() {
     }
@@ -42,7 +43,7 @@ public class CestaController {
     public void addFilme(Filme f){
         
         if(verificar(f) == null){
-            //i.aQtd();
+            item.aQtd();
             f.diminuiQtd();
             dao.updateQtd(f);
         }else{
