@@ -69,4 +69,8 @@ public class CestaController {
         this.cestaFilmes.clear();
     }
     
+    public void confirmarAluguel(){
+    
+    }
+    
 }
