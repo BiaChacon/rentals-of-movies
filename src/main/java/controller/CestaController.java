@@ -46,7 +46,7 @@ public class CestaController {
     public void addFilme(Filme f){
         
 	if(verificar(f.getId()) != null){
-            f.setQtdCesta(f.getQtdCesta()+1);
+            f.aumentaCesta();
             f.diminuiQtd();
 	}else{
             f.setQtdCesta(1);
@@ -61,7 +61,7 @@ public class CestaController {
         if(f.getQtdCesta() == 1){
             cestaFilmes.remove(f);
         }else{
-            f.setQtdCesta(f.getQtdCesta()-1);
+            f.diminuiCesta();
         }
         
     }

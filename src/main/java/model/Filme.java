@@ -97,4 +97,12 @@ public class Filme {
         this.qtdCesta = qtdCesta;
     }
     
+    public void aumentaCesta(){
+	this.qtdCesta++;
+    }
+    
+    public void diminuiCesta(){
+	this.qtdCesta--;
+    }
+    
 }
