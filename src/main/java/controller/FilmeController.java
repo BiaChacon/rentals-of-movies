@@ -10,6 +10,9 @@ public class FilmeController {
     
     private Filme filme = new Filme();
     FilmeDAO fd = new FilmeDAO();
+
+    public FilmeController() {
+    }
     
     public void cadastraFilme() {        
         fd.insertIntoFilmes(filme);
