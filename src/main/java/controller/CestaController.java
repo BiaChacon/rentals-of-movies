@@ -33,20 +33,19 @@ public class CestaController {
     public void addFilme(Filme f){
         
         for (ItemCesta i : cestaFilmes) {
+            
             if(i.getFilme().getId() == f.getId()){
                i.aQtd();
                f.diminuiQtd();
-               dao.updateQtd(f.getQuantidade());
-               return;
+               dao.updateQtd(f);
             }else{
                ItemCesta ic = new ItemCesta(f, 1);
                f.diminuiQtd();
-               dao.updateQtd(f.getQuantidade());
+               dao.updateQtd(f);
                this.cestaFilmes.add(ic);
-               return;
-            }
+            } 
+            
         }
-        
         
     }
     
