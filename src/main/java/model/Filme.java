@@ -11,6 +11,7 @@ public class Filme {
     private int nota;
     private String descricao;
     private int quantidade;
+    private int qtdCesta;
 
     public Filme(int id, String titulo, Date dataLancamento, int nota, String descricao, int quantidade) {
         this.id = id;
@@ -85,6 +86,15 @@ public class Filme {
     
     public void diminuiQtd(){
 	this.quantidade--;
+    }
+    
+    
+    public int getQtdCesta() {
+        return qtdCesta;
+    }
+
+    public void setQtdCesta(int qtdCesta) {
+        this.qtdCesta = qtdCesta;
     }
     
 }
