@@ -5,6 +5,14 @@ public class ItemCesta {
     private Filme filme;
     private int qtd;
 
+    public ItemCesta(Filme filme, int qtd) {
+        this.filme = filme;
+        this.qtd = qtd;
+    }
+
+    public ItemCesta() {
+    }
+
     public Filme getFilme() {
         return filme;
     }
