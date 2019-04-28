@@ -14,6 +14,9 @@ public class CestaController {
     private ArrayList<ItemCesta> cestaFilmes;
     private FilmeDAO dao = new FilmeDAO();
 
+    public CestaController() {
+    }
+
     public ArrayList<ItemCesta> getCestaFilmes() {
         return cestaFilmes;
     }
