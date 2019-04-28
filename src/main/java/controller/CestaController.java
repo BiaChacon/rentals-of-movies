@@ -16,7 +16,6 @@ public class CestaController {
 
     public CestaController() {
         this.cestaFilmes = new ArrayList<Filme>();
-        
     }
 
     public ArrayList<Filme> getCestaFilmes() {
@@ -28,7 +27,6 @@ public class CestaController {
     }
     
     public CestaController(ArrayList cestaFilmes) {
-        this.cestaFilmes = new ArrayList<Filme>();
         this.cestaFilmes = cestaFilmes;
     }
    
@@ -63,7 +61,7 @@ public class CestaController {
         if(f.getQtdCesta() == 1){
             cestaFilmes.remove(f);
         }else{
-            f.setQtdCesta(f.getQtdCesta()+1);
+            f.setQtdCesta(f.getQtdCesta()-1);
         }
         
     }
