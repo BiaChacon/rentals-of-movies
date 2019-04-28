@@ -4,6 +4,7 @@ package controller;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import model.Filme;
 import model.ItemCesta;
 import persistence.FilmeDAO;
 
@@ -29,17 +30,20 @@ public class CestaController {
         this.cestaFilmes = cestaFilmes;
     }
 
-    public void addFilme(ItemCesta item){
-        for (ItemCesta f : cestaFilmes) {
-            if(f.getFilme().getId() == item.getFilme().getId()){
-               item.getFilme().diminuiQtd();
-               dao.updateQtd(item.getFilme().getQuantidade());
-               this.cestaFilmes.add(item);
-                return;
+    public void addFilme(Filme f){
+        
+        for (ItemCesta i : cestaFilmes) {
+            if(i.getFilme().getId() == f.getId()){
+               i.aQtd();
+               f.diminuiQtd();
+               dao.updateQtd(f.getQuantidade());
+               return;
             }else{
-               item.aQtd();
-               item.getFilme().diminuiQtd();
-               dao.updateQtd(item.getFilme().getQuantidade()); 
+               ItemCesta ic = new ItemCesta(f, 1);
+               f.diminuiQtd();
+               dao.updateQtd(f.getQuantidade());
+               this.cestaFilmes.add(ic);
+               return;
             }
         }
         
