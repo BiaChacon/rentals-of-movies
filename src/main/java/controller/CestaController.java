@@ -11,12 +11,10 @@ import persistence.FilmeDAO;
 @ManagedBean (name = "cesta")
 public class CestaController {
   
-    private ArrayList<Filme> cestaFilmes;
+    private ArrayList<Filme> cestaFilmes = new ArrayList<Filme>();
     private FilmeDAO dao = new FilmeDAO();
 
-    public CestaController() {
-        this.cestaFilmes = new ArrayList<Filme>();
-    }
+    public CestaController() {}
 
     public ArrayList<Filme> getCestaFilmes() {
         return cestaFilmes;
