@@ -29,7 +29,15 @@ public class CestaController {
     public CestaController(ArrayList cestaFilmes) {
         this.cestaFilmes = cestaFilmes;
     }
-
+    
+    /*public Filme verificar(Filme f){
+        for (ItemCesta i : cestaFilmes) {
+            if(i.getFilme().getId() == f.getId()){
+                return null;
+            }
+        return f; 
+    }*/
+    
     public void addFilme(Filme f){
         
         for (ItemCesta i : cestaFilmes) {
