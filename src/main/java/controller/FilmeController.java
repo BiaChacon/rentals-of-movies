@@ -9,15 +9,14 @@ import persistence.FilmeDAO;
 public class FilmeController {
     
     private Filme filme = new Filme();
+    FilmeDAO fd = new FilmeDAO();
     
-    public void cadastraFilme() {
-        FilmeDAO fd = new FilmeDAO();         
+    public void cadastraFilme() {        
         fd.insertIntoFilmes(filme);
      }
       
     public List<Filme> getFilmes() {
   
-        FilmeDAO fd = new FilmeDAO(); 
         List<Filme> listaFilmes = fd.readFilmes();
         
         return listaFilmes;

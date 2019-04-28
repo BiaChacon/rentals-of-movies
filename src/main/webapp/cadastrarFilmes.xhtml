@@ -47,22 +47,22 @@
             Título: <h:inputText id="titulo" value="#{filmes.filme.titulo}" required="true" requiredMessage="Título não pode ser vazio."/> 
                     <h:message id="m1" for="titulo" style="color:red"/> <br/>
             <br/>
-            Data Lançamento: <h:inputText id="dataLancamento" value="#{filmes.filme.dataLancamento}" requiredMessage="Data fora do formato dd/MM/yyyy">
+            Data Lançamento: <h:inputText id="dataLancamento" value="#{filmes.filme.dataLancamento}" required="true" requiredMessage="Data fora do formato dd/MM/yyyy">
                                 <f:convertDateTime pattern="dd/MM/yyyy" for="dataLancamento"/> 
                              </h:inputText>
                              <h:message id="m2" for="dataLancamento" style="color:red"/> <br/>
             <br/>
-            Nota: <h:inputText id="nota" value="#{filmes.filme.nota}" requiredMessage="A nota deve ser um inteiro de 1 até 5.">
+            Nota: <h:inputText id="nota" value="#{filmes.filme.nota}" required="true" requiredMessage="A nota deve ser um inteiro de 1 até 5.">
                      <f:validateDoubleRange maximum="5" minimum="1"/>
                   </h:inputText>
                   <h:message id="m3" for="nota" style="color:red"/> <br/>
             <br/>
-            Descrição: <h:inputText id="descricao" value="#{filmes.filme.descricao}" requiredMessage="Descrição deve conter pelo menos 10 caracteres.">
+            Descrição: <h:inputText id="descricao" value="#{filmes.filme.descricao}" required="true" requiredMessage="Descrição deve conter pelo menos 10 caracteres.">
                           <f:validateLength minimum="10" maximum="250"/>
                        </h:inputText>
                        <h:message id="m4" for="descricao" style="color:red"/> <br/>
             <br/>
-            Quantidade: <h:inputText id="quantidade" value="#{filmes.filme.quantidade}" requiredMessage="Quantidade deve ser um número maior que zero."/>
+            Quantidade: <h:inputText id="quantidade" value="#{filmes.filme.quantidade}" required="true" requiredMessage="Quantidade deve ser um número maior que zero."/>
                         <h:message id="m5" for="quantidade" style="color:red"/> <br/>
             
             
