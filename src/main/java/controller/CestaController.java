@@ -47,10 +47,12 @@ public class CestaController {
 	if(verificar(f.getId()) != null){
             f.aumentaCesta();
             f.diminuiQtd();
+            dao.updateQtd(f);
 	}else{
             f.setQtdCesta(1);
             cestaFilmes.add(f);
             f.diminuiQtd();
+            dao.updateQtd(f);
         }
         
     }
@@ -59,8 +61,12 @@ public class CestaController {
         
         if(f.getQtdCesta() == 1){
             cestaFilmes.remove(f);
+            f.incrementaQtd();
+            dao.updateQtd(f);
         }else{
             f.diminuiCesta();
+            f.incrementaQtd();
+            dao.updateQtd(f);
         }
         
     }
