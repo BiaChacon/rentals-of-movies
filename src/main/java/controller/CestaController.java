@@ -13,7 +13,8 @@ public class CestaController {
   
     private ArrayList<Filme> cestaFilmes = new ArrayList<Filme>();
     private FilmeDAO dao = new FilmeDAO();
-
+    int total=0;
+    
     public CestaController() {}
 
     public ArrayList<Filme> getCestaFilmes() {
@@ -68,8 +69,32 @@ public class CestaController {
         this.cestaFilmes.clear();
     }
     
-    public void confirmarAluguel(){
-    
+    public String confirmarAluguel(){
+        
+        int i=0;
+        total=0;
+        for(Filme f : cestaFilmes){
+            i = f.getQtdCesta();
+            total = total+(i*5);
+        }
+        this.cestaFilmes.clear();
+        return "totalPagar";
+    }
+
+    public FilmeDAO getDao() {
+        return dao;
+    }
+
+    public void setDao(FilmeDAO dao) {
+        this.dao = dao;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
     
 }
