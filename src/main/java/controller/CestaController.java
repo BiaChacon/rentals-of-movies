@@ -79,6 +79,7 @@ public class CestaController {
         }
         this.cestaFilmes.clear();
         return "totalPagar";
+        
     }
 
     public FilmeDAO getDao() {
