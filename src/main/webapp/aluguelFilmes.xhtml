@@ -41,13 +41,13 @@
                 
                 <p:column>
                 <f:facet name="header"></f:facet>
-                <p:commandButton action="#{cesta.addFilme(f)}" value="Adicionar a Cesta" disabled="#{f.quantidade == 0}"/>
+                <h:commandButton action="#{cesta.addFilme(f)}" value="Adicionar a Cesta" disabled="#{f.quantidade == 0}"/>
                 </p:column>
                 
             </p:dataTable>  
             <br/> 
-            <p:commandButton action="#{tela.home()}" value="Voltar"/> <a/>
-            <p:commandButton action="#{tela.cestaAluguel()}" value="Ver cesta de aluguel"/>
+            <h:commandButton action="#{tela.home()}" value="Voltar"/> <a/>
+            <h:commandButton action="#{tela.cestaAluguel()}" value="Ver cesta de aluguel"/>
         </h:form>
     </h:body>
 </html>
