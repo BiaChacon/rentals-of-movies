@@ -25,10 +25,6 @@ public class CestaController {
         this.cestaFilmes = cestaFilmes;
     }
     
-    public CestaController(ArrayList cestaFilmes) {
-        this.cestaFilmes = cestaFilmes;
-    }
-   
     public Filme verificar(int id){
         
 	Filme ff = null;
