@@ -1,4 +1,4 @@
-# Rentals of movies
+# Trabalho da Disciplina de Programação Web
 
 Desenvolver uma aplicação Web utilizando JSF para gerenciamento de uma pequena locadora. Nesse exemplo hipotético não existe diferenciação entre cliente e funcionários, ou seja, qualquer pessoa poderá alugar filmes ou cadastrar novos filmes sem a necessidade de um login. As seguintes funcionalidades devem ser implementadas:
 
